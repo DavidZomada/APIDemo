@@ -18,5 +18,15 @@
   <ItemGroup>
     <None Remove="Xamarin.Forms" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Models\" />
+    <None Remove="Views\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
 </Project>

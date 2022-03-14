@@ -4,15 +4,22 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using APIDemoApp.ViewModels;
 using Xamarin.Forms;
 
-namespace APIDemoApp
+namespace APIDemoApp.Views
 {
     public partial class MainPage : ContentPage
     {
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.BindingContext = new MainPageViewModel();
         }
     }
 }
