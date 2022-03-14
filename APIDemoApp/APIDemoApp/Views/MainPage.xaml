@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:APIDemoApp.ViewModels"
+             x:DataType="viewModels:MainPageViewModel"
+             xmlns:models="clr-namespace:APIDemoApp.Models"
+             x:Class="APIDemoApp.Views.MainPage">
+
+    <StackLayout>
+        <ListView ItemsSource="{Binding Plants}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Plant">
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}"
+                                TextColor="#f35e20"/>
+                                <Label Text="{Binding Description}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#503026"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
