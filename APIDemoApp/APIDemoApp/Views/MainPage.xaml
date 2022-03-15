@@ -4,27 +4,42 @@
              xmlns:viewModels="clr-namespace:APIDemoApp.ViewModels"
              x:DataType="viewModels:MainPageViewModel"
              xmlns:models="clr-namespace:APIDemoApp.Models"
-             x:Class="APIDemoApp.Views.MainPage">
+             x:Class="APIDemoApp.Views.MainPage"
+             BackgroundImageSource="background.jpeg">
 
-    <StackLayout>
-        <ListView ItemsSource="{Binding Plants}">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="models:Plant">
-                    <ViewCell>
-                        <StackLayout BackgroundColor="#eee"
-                        Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Name}"
-                                TextColor="#f35e20"/>
-                                <Label Text="{Binding Description}"
-                                HorizontalOptions="EndAndExpand"
-                                TextColor="#503026"/>
-                            </StackLayout>
+    <CarouselView ItemsSource="{Binding Plants}">
+        <CarouselView.ItemTemplate>
+            <DataTemplate x:DataType="models:Plant">
+                <StackLayout>
+                    <Frame BackgroundColor="#E6FFFFFF"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="450"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand" HasShadow="False">
+                        <StackLayout>
+                            <Label Text="{Binding Name}"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                            <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="100" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
+                                <Image Source="{Binding Picture}"
+                               Aspect="AspectFill"
+                               HorizontalOptions="Center" />
+                            </Frame>
+                            <Label Text="Loreipm"
+                               HorizontalOptions="Center" />
+                            <Label Text="{Binding Description}"
+                               FontAttributes="Italic"
+                               HorizontalOptions="Center"
+                               MaxLines="5"
+                               LineBreakMode="TailTruncation" />
                         </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
 
 </ContentPage>

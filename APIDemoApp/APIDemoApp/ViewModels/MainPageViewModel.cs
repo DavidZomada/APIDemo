@@ -6,26 +6,22 @@ using APIDemoApp.Models;
 using APIDemoApp.Utilities;
 using Newtonsoft.Json;
 
-namespace APIDemoApp.ViewModels
-{
-    public class MainPageViewModel : BaseViewModel
-    {
+namespace APIDemoApp.ViewModels {
+    public class MainPageViewModel : BaseViewModel {
         private ObservableCollection<Plant> _Plants { get; set; }
         public ObservableCollection<Plant> Plants {
             get => _Plants;
-            set { 
+            set {
                 _Plants = value;
                 OnPropertyChanged();
             }
         }
 
-        public MainPageViewModel()
-        {
-             GetAllPlants();
+        public MainPageViewModel() {
+            GetAllPlants();
         }
 
-        public async void GetAllPlants()
-        {
+        public async void GetAllPlants() {
             var url = "https://serverdemo.azurewebsites.net/api/Plant";
             var service = new HttpHelper<Plant>();
             var plants = await service.GetRestServiceDataAsync(url);
