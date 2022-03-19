@@ -21,5 +21,10 @@ namespace APIDemoApp.Views
             base.OnAppearing();
             this.BindingContext = new MainPageViewModel();
         }
+
+        void CarouselView_CurrentItemChanged(System.Object sender, Xamarin.Forms.CurrentItemChangedEventArgs e)
+        {
+
+        }
     }
 }
