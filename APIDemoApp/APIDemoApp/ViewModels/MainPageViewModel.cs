@@ -28,10 +28,8 @@ namespace APIDemoApp.ViewModels
 
         public async void GetAllPlants()
         {
-            var url = "https://serverdemo.azurewebsites.net/api/Plant";
-            var service = new HttpHelper<Plant>();
-            var plants = await service.GetRestServiceDataAsync(url);
-            Plants = new ObservableCollection<Plant>((IEnumerable<Plant>)plants);
+            var client = new HttpHelper();
+            Plants = await client.GetAllPlants("Plant");
         }
     }
 }

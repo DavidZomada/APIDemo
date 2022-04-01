@@ -9,9 +9,9 @@ namespace APIDemoApp
     {
         public App()
         {
+            DevExpress.XamarinForms.DataForm.Initializer.Init();
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new MainPageView();
         }
 
         protected override void OnStart()

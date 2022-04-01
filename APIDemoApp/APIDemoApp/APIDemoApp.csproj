@@ -14,6 +14,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="DevExpress.XamarinForms.Editors" Version="21.2.6" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xamarin.Forms" />
@@ -22,6 +23,8 @@
     <None Remove="Views\" />
     <None Remove="ViewModels\" />
     <None Remove="Utilities\" />
+    <None Remove="DevExpress.XamarinForms.Editors" />
+    <None Remove="Xamarin.Forms.Svg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

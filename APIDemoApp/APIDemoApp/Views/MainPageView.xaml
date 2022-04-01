@@ -4,23 +4,25 @@
              xmlns:viewModels="clr-namespace:APIDemoApp.ViewModels"
              x:DataType="viewModels:MainPageViewModel"
              xmlns:models="clr-namespace:APIDemoApp.Models"
-             x:Class="APIDemoApp.Views.MainPage"
-             BackgroundImageSource="background_image.png">
+             xmlns:editors="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             x:Class="APIDemoApp.Views.MainPageView">
 
-    <StackLayout Margin="15,40,15,30">
-        <StackLayout Orientation="Horizontal" Padding="10">
-            <ImageButton Source="menu.svg" Style="{StaticResource Icon}"/>
+    <StackLayout Margin="0,40,0,40">
+        <StackLayout Orientation="Horizontal" Padding="20" HorizontalOptions="CenterAndExpand">
+            <editors:SimpleButton Icon="menu.svg" Style="{StaticResource Icon}" BackgroundColor="Black"/>
             <Label Text="APIDemo App"/>
-            <ImageButton Source="profile.svg" Style="{StaticResource Icon}"/>
+            <editors:SimpleButton Icon="profile.svg" Style="{StaticResource Icon}" BackgroundColor="Black"/>
         </StackLayout>
-        <Frame Style="{StaticResource FrameBeige}" HeightRequest="45">
-            <SearchBar BackgroundColor="Transparent"/>
-        </Frame>
-        <CarouselView ItemsSource="{Binding Plants}" CurrentItemChanged="CarouselView_CurrentItemChanged">
+        <StackLayout Padding="20">
+            <Frame Style="{StaticResource FrameBeige}" HeightRequest="45" Padding="5" CornerRadius="20">
+                <SearchBar BackgroundColor="Transparent"/>
+            </Frame>
+        </StackLayout>
+        <CarouselView ItemsSource="{Binding Plants}" CurrentItemChanged="CarouselView_CurrentItemChanged" IndicatorView="IndicatorView">
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="models:Plant">
-                    <StackLayout>
-                        <Frame Style="{StaticResource FrameBeige}" Padding="20" HeightRequest="612">
+                    <StackLayout Padding="20">
+                        <Frame Style="{StaticResource FrameBeige}" HeightRequest="612">
                             <StackLayout>
                                 <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
                                 <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="100" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
@@ -34,5 +36,7 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
+
+        <IndicatorView x:Name="IndicatorView" IndicatorColor="Black"/>
     </StackLayout>
 </ContentPage>
