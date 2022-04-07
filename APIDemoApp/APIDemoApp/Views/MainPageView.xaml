@@ -4,21 +4,48 @@
              xmlns:viewModels="clr-namespace:APIDemoApp.ViewModels"
              x:DataType="viewModels:MainPageViewModel"
              xmlns:models="clr-namespace:APIDemoApp.Models"
+             xmlns:triggers="clr-namespace:APIDemoApp.Utilities"
              xmlns:editors="http://schemas.devexpress.com/xamarin/2014/forms/editors"
-             x:Class="APIDemoApp.Views.MainPageView">
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+             x:Class="APIDemoApp.Views.MainPageView"
+             BackgroundImageSource = "background_image.png">
 
-    <StackLayout Margin="0,40,0,40">
-        <StackLayout Orientation="Horizontal" Padding="20" HorizontalOptions="CenterAndExpand">
-            <editors:SimpleButton Icon="menu.svg" Style="{StaticResource Icon}" BackgroundColor="Black"/>
-            <Label Text="APIDemo App"/>
-            <editors:SimpleButton Icon="profile.svg" Style="{StaticResource Icon}" BackgroundColor="Black"/>
+    <ContentPage.Resources>
+        <!-- Add more resources here -->
+    </ContentPage.Resources>
+
+    <StackLayout x:Name="Body" Margin="0,40" Opacity="0">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <xct:Expander HorizontalOptions="Start">
+                <xct:Expander.Header>
+                    <editors:SimpleButton Icon="menu.png" Style="{StaticResource Icon}"/>
+                </xct:Expander.Header>
+            </xct:Expander>
+            <Label Text="APIDemo App" Style="{StaticResource Title}"/>
+            <xct:Expander HorizontalOptions="End">
+                <xct:Expander.Header>
+                    <editors:SimpleButton Icon="profile.png" Style="{StaticResource Icon}"/>
+                </xct:Expander.Header>
+            </xct:Expander>
         </StackLayout>
-        <StackLayout Padding="20">
-            <Frame Style="{StaticResource FrameBeige}" HeightRequest="45" Padding="5" CornerRadius="20">
+        <Frame Style="{StaticResource FrameBeige}" HeightRequest="45" Margin="20,0" Padding="5" CornerRadius="20">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <SearchBar BackgroundColor="Transparent"/>
-            </Frame>
-        </StackLayout>
-        <CarouselView ItemsSource="{Binding Plants}" CurrentItemChanged="CarouselView_CurrentItemChanged" IndicatorView="IndicatorView">
+                <xct:Expander HorizontalOptions="Start">
+                    <xct:Expander.Header>
+                        <editors:SimpleButton Icon="menu.png" Style="{StaticResource Icon}"/>
+                    </xct:Expander.Header>
+                </xct:Expander>
+                <StackLayout BackgroundColor="Red" HeightRequest="250">
+                    <editors:SimpleButton Icon="menu.png" Style="{StaticResource Icon}"/>
+                    <editors:SimpleButton Icon="menu.png" Style="{StaticResource Icon}"/>
+                    <editors:SimpleButton Icon="menu.png" Style="{StaticResource Icon}"/>
+                    <editors:SimpleButton Icon="menu.png" Style="{StaticResource Icon}"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+        <CarouselView ItemsSource="{Binding Plants}" IndicatorView="IndicatorView">
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="models:Plant">
                     <StackLayout Padding="20">
@@ -31,12 +58,24 @@
                                 <Label Text="Loreipm" HorizontalOptions="Center"/>
                                 <Label Text="{Binding Description}" FontAttributes="Italic" HorizontalOptions="Center" MaxLines="5" LineBreakMode="TailTruncation" />
                             </StackLayout>
+
+                            <Frame.Triggers>
+                                <EventTrigger Event="PropertyChanged">
+                                    <triggers:ScaleAction/>
+                                </EventTrigger>
+                            </Frame.Triggers>
                         </Frame>
                     </StackLayout>
                 </DataTemplate>
             </CarouselView.ItemTemplate>
-        </CarouselView>
 
+            <CarouselView.Triggers>
+                <EventTrigger Event="CurrentItemChanged">
+                    <triggers:ScaleAction/>
+                </EventTrigger>
+            </CarouselView.Triggers>
+
+        </CarouselView>
         <IndicatorView x:Name="IndicatorView" IndicatorColor="Black"/>
     </StackLayout>
 </ContentPage>

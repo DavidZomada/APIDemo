@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using APIDemoApp.Models;
 using APIDemoApp.Utilities;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace APIDemoApp.ViewModels
 {
@@ -21,9 +22,24 @@ namespace APIDemoApp.ViewModels
             }
         }
 
-        public MainPageViewModel()
+        //TODO: Add visual element type as agument to made the cast the sender flexable
+        public MainPageViewModel(VisualElement sender)
         {
-            GetAllPlants();
+            LoadPage(sender);
+        }
+
+        public async void LoadPage(VisualElement sender)
+        {
+            var task = Task.Run(() =>
+            {
+                GetAllPlants();
+            });
+
+            await task.ContinueWith(antecedent =>
+            {
+                (sender as StackLayout).FadeTo(1, 2000);
+                (sender as StackLayout).ScaleTo(0.95, 2000);
+            });
         }
 
         public async void GetAllPlants()

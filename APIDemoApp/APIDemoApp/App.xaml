@@ -5,15 +5,23 @@
              x:Class="APIDemoApp.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="DarkGreen">#415428</Color>
-            <Color x:Key="MediumGreen">#586232</Color>
-            <Color x:Key="LigthGreen">#979C8D</Color>
-            <Color x:Key="Salmon">#FDBB95</Color>
-            <Color x:Key="Beige">#FDF7E2</Color> 
+            <Color x:Key="Primary">#415428</Color>
+            <Color x:Key="Secondary">#586232</Color>
+            <Color x:Key="Tertiary">#979C8D</Color>
+            <Color x:Key="Quaternary">#FDBB95</Color>
+            <Color x:Key="Quinary">#FDF7E2</Color>
+            <Style TargetType="Label" x:Key="Title">
+                <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+                <Setter Property="FontSize" Value="Subtitle"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
             <Style TargetType="editors:SimpleButton" x:Key="Icon">
                 <Setter Property="HeightRequest" Value="50"/>
                 <Setter Property="WidthRequest" Value="50"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="IconColor" Value="{StaticResource Primary}"/>
             </Style>
             <Style TargetType="Frame" x:Key="FrameBeige">
                 <Setter Property="BackgroundColor" Value="#FDF7E2"/>
@@ -22,6 +30,12 @@
                 <Setter Property="WidthRequest" Value="345"/>
                 <Setter Property="Margin" Value="0"/>
             </Style>
+
+            <!--<ResourceDictionary>
+                <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                    <Setter Property="rainbows:DebugRainbow.ShowColors" Value="True" />
+                </Style>
+            </ResourceDictionary>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

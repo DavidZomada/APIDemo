@@ -19,13 +19,7 @@ namespace APIDemoApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            this.BindingContext = new MainPageViewModel();
-            this.BackgroundImageSource = "background_image.png";
-        }
-
-        void CarouselView_CurrentItemChanged(System.Object sender, Xamarin.Forms.CurrentItemChangedEventArgs e)
-        {
-
+            this.BindingContext = new MainPageViewModel(Body);
         }
     }
 }
