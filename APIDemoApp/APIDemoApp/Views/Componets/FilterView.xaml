@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xct:Expander
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Class="APIDemoApp.Views.Componets.FilterView" Margin="30,0" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent">
+
+    <xct:Expander.Header>
+        <StackLayout>
+            <yummy:PancakeView x:Name="CollapseFrame" Padding="0,0,10,0" CornerRadius="20,20,20,20" BackgroundColor="{StaticResource Quinary}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <SearchBar Grid.Column="0" BackgroundColor="Transparent"/>
+                    <Path Style="{StaticResource Arrow}" Grid.Column="1" Margin="0,5,0,0">
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Arrow_Clicked"/>
+                        </Path.GestureRecognizers>
+                    </Path>
+                </Grid>
+            </yummy:PancakeView>
+        </StackLayout>
+    </xct:Expander.Header>
+    <yummy:PancakeView CornerRadius="0,0,20,20">
+        <Grid HeightRequest="300" BackgroundColor="{StaticResource Quinary}">
+
+        </Grid>
+    </yummy:PancakeView>
+
+</xct:Expander>

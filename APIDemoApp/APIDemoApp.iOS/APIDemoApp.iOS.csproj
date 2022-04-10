@@ -141,6 +141,7 @@
     <BundleResource Include="Resources\favorite.svg" />
     <BundleResource Include="Resources\menu.png" />
     <BundleResource Include="Resources\profile.png" />
+    <BundleResource Include="Resources\arrow.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

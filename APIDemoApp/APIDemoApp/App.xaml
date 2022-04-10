@@ -2,6 +2,7 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:editors="http://schemas.devexpress.com/xamarin/2014/forms/editors"
+             xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
              x:Class="APIDemoApp.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -10,6 +11,13 @@
             <Color x:Key="Tertiary">#979C8D</Color>
             <Color x:Key="Quaternary">#FDBB95</Color>
             <Color x:Key="Quinary">#FDF7E2</Color>
+            <Style TargetType="Path" x:Key="Arrow">
+                <Setter Property="Data" Value="M310.6 246.6l-127.1 128C176.4 380.9 168.2 384 160 384s-16.38-3.125-22.63-9.375l-127.1-128C.2244 237.5-2.516 223.7 2.438 211.8S19.07 192 32 192h255.1c12.94 0 24.62 7.781 29.58 19.75S319.8 237.5 310.6 246.6z"/>
+                <Setter Property="Stroke" Value="Black"/>
+                <Setter Property="Aspect" Value="Uniform"/>
+                <Setter Property="HeightRequest" Value="18"/>
+                <Setter Property="WidthRequest" Value="18"/>
+            </Style>
             <Style TargetType="Label" x:Key="Title">
                 <Setter Property="TextColor" Value="{StaticResource Primary}"/>
                 <Setter Property="FontSize" Value="Subtitle"/>
@@ -31,11 +39,11 @@
                 <Setter Property="Margin" Value="0"/>
             </Style>
 
-            <!--<ResourceDictionary>
+            <ResourceDictionary>
                 <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
-                    <Setter Property="rainbows:DebugRainbow.ShowColors" Value="True" />
+                    <Setter Property="rainbows:DebugRainbow.ShowColors" Value="False" />
                 </Style>
-            </ResourceDictionary>-->
+            </ResourceDictionary>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
