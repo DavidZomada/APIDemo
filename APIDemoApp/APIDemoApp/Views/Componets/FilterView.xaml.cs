@@ -26,18 +26,18 @@ namespace APIDemoApp.Views.Componets
             }
             else
             {
-                await Task.Delay((int)this.AnimationLength);
-                expHeader.CornerRadius = new CornerRadius(20, 20, 20, 20);
+                await pthArrow.RotateTo(0, this.AnimationLength);
             }
 
             if (this.IsExpanded)
             {
-                await pthArrow.RotateTo(180, this.AnimationLength) ;
+                await pthArrow.RotateTo(180, this.AnimationLength);
                 await expBody.FadeTo(1, this.AnimationLength);
             }
             else
             {
-                await pthArrow.RotateTo(0, this.AnimationLength);
+                //await Task.Delay((int)this.AnimationLength - 10);
+                expHeader.CornerRadius = new CornerRadius(20, 20, 20, 20);
             }
         }
     }

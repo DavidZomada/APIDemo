@@ -5,6 +5,9 @@
     xmlns:componets="clr-namespace:APIDemoApp.Views.Componets"
     x:Class="APIDemoApp.Views.Componets.ArenaPageView" BackgroundColor="{StaticResource Quaternary}">
 
-    <!--<componets:HeaderView/>-->
-    <componets:FilterView Margin="20,0"/>
+    <StackLayout>
+        <componets:HeaderView/>
+        <componets:FilterView Margin="20,0" Padding="0,10"/>
+        <!--<componets:DotsView/>-->
+    </StackLayout>
 </ContentPage>
