@@ -13,7 +13,7 @@ namespace APIDemoApp
             DevExpress.XamarinForms.DataForm.Initializer.Init();
             InitializeComponent();
             //MainPage = new MainPageView();
-            MainPage = new TestContentPage();
+            MainPage = new ArenaPageView();
         }
 
         protected override void OnStart()

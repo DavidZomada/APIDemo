@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace APIDemoApp.Views.Componets
 {
-    public partial class TestContentPage : ContentPage
+    public partial class HeaderView : StackLayout
     {
-        public TestContentPage()
+        public HeaderView()
         {
             InitializeComponent();
         }

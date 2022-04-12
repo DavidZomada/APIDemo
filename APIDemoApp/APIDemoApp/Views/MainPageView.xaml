@@ -8,6 +8,7 @@
              xmlns:editors="http://schemas.devexpress.com/xamarin/2014/forms/editors"
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+             xmlns:componets="clr-namespace:APIDemoApp.Views.Componets"
              x:Class="APIDemoApp.Views.MainPageView"
              BackgroundImageSource = "background_image.png">
 
@@ -20,68 +21,51 @@
             <StackLayout Orientation="Horizontal">
                 <xct:Expander HorizontalOptions="Start">
                     <xct:Expander.Header>
-                        <editors:SimpleButton Icon="menu.png" Style="{StaticResource Icon}"/>
+                        <editors:SimpleButton Icon="menu.png"/>
                     </xct:Expander.Header>
                 </xct:Expander>
                 <Label Text="APIDemo App" Style="{StaticResource Title}" HorizontalOptions="FillAndExpand"/>
                 <xct:Expander HorizontalOptions="End">
                     <xct:Expander.Header>
-                        <editors:SimpleButton Icon="profile.png" Style="{StaticResource Icon}"/>
+                        <editors:SimpleButton Icon="profile.png"/>
                     </xct:Expander.Header>
                 </xct:Expander>
             </StackLayout>
-            <AbsoluteLayout AbsoluteLayout.LayoutFlags="SizeProportional" AbsoluteLayout.LayoutBounds="0,0,1,1">
-                <xct:Expander HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource Quinary}">
-                    <xct:Expander.Header>
-                        <yummy:PancakeView CornerRadius="20" HeightRequest="45" Padding="15,5">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <SearchBar BackgroundColor="Transparent" HorizontalOptions="StartAndExpand"/>
-                            </StackLayout>
-                        </yummy:PancakeView>
-                    </xct:Expander.Header>
-                    <yummy:PancakeView CornerRadius="0,0,20,20" HeightRequest="100" Padding="15,5">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <SearchBar BackgroundColor="Transparent" HorizontalOptions="StartAndExpand"/>
-                        </StackLayout>
-                    </yummy:PancakeView>
-                </xct:Expander>
-            </AbsoluteLayout>
+            <componets:FilterView/>
         </StackLayout>
-        <RelativeLayout>
-            <StackLayout HorizontalOptions="CenterAndExpand">
-                <CarouselView ItemsSource="{Binding Plants}" IndicatorView="IndicatorView" HorizontalOptions="FillAndExpand" Margin="0">
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate x:DataType="models:Plant">
-                            <StackLayout Padding="20">
-                                <Frame Style="{StaticResource FrameBeige}" HeightRequest="612">
-                                    <StackLayout>
-                                        <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                        <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="100" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
-                                            <Image Source="{Binding Picture}" Aspect="AspectFill" HorizontalOptions="Center" />
-                                        </Frame>
-                                        <Label Text="Loreipm" HorizontalOptions="Center"/>
-                                        <Label Text="{Binding Description}" FontAttributes="Italic" HorizontalOptions="Center" MaxLines="5" LineBreakMode="TailTruncation" />
-                                    </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <CarouselView ItemsSource="{Binding Plants}" IndicatorView="IndicatorView" HorizontalOptions="FillAndExpand" Margin="0">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Plant">
+                        <StackLayout Padding="20">
+                            <Frame Style="{StaticResource FrameBeige}" HeightRequest="612">
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Frame Padding="0" IsClippedToBounds="True" HasShadow="False" CornerRadius="100" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
+                                        <Image Source="{Binding Picture}" Aspect="AspectFill" HorizontalOptions="Center" />
+                                    </Frame>
+                                    <Label Text="Loreipm" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Description}" FontAttributes="Italic" HorizontalOptions="Center" MaxLines="5" LineBreakMode="TailTruncation" />
+                                </StackLayout>
 
-                                    <Frame.Triggers>
-                                        <EventTrigger Event="PropertyChanged">
-                                            <triggers:ScaleAction/>
-                                        </EventTrigger>
-                                    </Frame.Triggers>
-                                </Frame>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
+                                <Frame.Triggers>
+                                    <EventTrigger Event="PropertyChanged">
+                                        <triggers:ScaleAction/>
+                                    </EventTrigger>
+                                </Frame.Triggers>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
 
-                    <CarouselView.Triggers>
-                        <EventTrigger Event="CurrentItemChanged">
-                            <triggers:ScaleAction/>
-                        </EventTrigger>
-                    </CarouselView.Triggers>
+                <CarouselView.Triggers>
+                    <EventTrigger Event="CurrentItemChanged">
+                        <triggers:ScaleAction/>
+                    </EventTrigger>
+                </CarouselView.Triggers>
 
-                </CarouselView>
-                <IndicatorView x:Name="IndicatorView" IndicatorColor="Black"/>
-            </StackLayout>
-        </RelativeLayout>
+            </CarouselView>
+            <IndicatorView x:Name="IndicatorView" IndicatorColor="Black"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

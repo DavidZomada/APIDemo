@@ -17,24 +17,27 @@ namespace APIDemoApp.Views.Componets
 
         async void Arrow_Clicked(System.Object sender, System.EventArgs e)
         {
+            await expBody.FadeTo(0, this.AnimationLength);
+
             this.IsExpanded = !this.IsExpanded;
             if (this.IsExpanded)
             {
-                CollapseFrame.CornerRadius = new CornerRadius(20,20,0,0);
+                expHeader.CornerRadius = new CornerRadius(20,20,0,0);
             }
             else
             {
                 await Task.Delay((int)this.AnimationLength);
-                CollapseFrame.CornerRadius = new CornerRadius(20, 20, 20, 20);
+                expHeader.CornerRadius = new CornerRadius(20, 20, 20, 20);
             }
 
             if (this.IsExpanded)
             {
-                await (sender as Path).RotateTo(180, this.AnimationLength);
+                await pthArrow.RotateTo(180, this.AnimationLength) ;
+                await expBody.FadeTo(1, this.AnimationLength);
             }
             else
             {
-                await (sender as Path).RotateTo(0, this.AnimationLength);
+                await pthArrow.RotateTo(0, this.AnimationLength);
             }
         }
     }
