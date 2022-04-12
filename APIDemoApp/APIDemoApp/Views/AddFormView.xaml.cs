@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using APIDemoApp.Models;
 using APIDemoApp.ViewModels;
 using Xamarin.Forms;
 
 namespace APIDemoApp.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class AddFormView : ContentPage
     {
-        public MainPage()
+        public AddFormView()
         {
             InitializeComponent();
         }
@@ -19,7 +16,7 @@ namespace APIDemoApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            this.BindingContext = new MainPageViewModel();
+            this.BindingContext = new AddFormViewModel();
         }
     }
 }

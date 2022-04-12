@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12">
+  <g id="menu" transform="translate(-35 -32)">
+    <g id="menu-2" data-name="menu" transform="translate(32 26)">
+      <g id="Rectangle_9" data-name="Rectangle 9" transform="translate(3 6)" fill="#fff" stroke="#415428" stroke-width="1">
+        <rect width="18" height="2" rx="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="17" height="1" rx="0.5" fill="none"/>
+      </g>
+      <g id="Rectangle_10" data-name="Rectangle 10" transform="translate(3 11)" fill="#fff" stroke="#415428" stroke-width="1">
+        <rect width="18" height="2" rx="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="17" height="1" rx="0.5" fill="none"/>
+      </g>
+      <g id="Rectangle_11" data-name="Rectangle 11" transform="translate(3 6)" fill="#fff" stroke="#415428" stroke-width="1">
+        <rect width="18" height="2" rx="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="17" height="1" rx="0.5" fill="none"/>
+      </g>
+      <g id="Rectangle_12" data-name="Rectangle 12" transform="translate(3 16)" fill="#fff" stroke="#415428" stroke-width="1">
+        <rect width="18" height="2" rx="1" stroke="none"/>
+        <rect x="0.5" y="0.5" width="17" height="1" rx="0.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="APIDemoApp.Views.Componets.HeaderView"
+    xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit" 
+    Orientation="Horizontal">
+
+    <xct:Expander VerticalOptions="Center">
+        <xct:Expander.Header>
+            <Path Style="{StaticResource Menu}">
+
+            </Path>
+        </xct:Expander.Header>
+        <Path Style="{StaticResource MenuShape}" HeightRequest="300" WidthRequest="300" Fill="Black" Aspect="Uniform"/>
+    </xct:Expander>
+
+    <Label Text="APIDemo App" Style="{StaticResource Title}" HorizontalOptions="FillAndExpand"/>
+    <Path Style="{StaticResource Profile}">
+
+    </Path>
+</StackLayout>

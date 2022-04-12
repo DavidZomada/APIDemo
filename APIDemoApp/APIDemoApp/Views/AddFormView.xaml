@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:APIDemoApp.ViewModels"
+    x:DataType="viewModels:AddFormViewModel"
+    xmlns:models="clr-namespace:APIDemoApp.Models"
+    xmlns:dataform="http://schemas.devexpress.com/xamarin/2014/forms/dataform"
+    x:Class="APIDemoApp.Views.AddFormView">
+
+    <ScrollView>
+        <StackLayout>
+            <dataform:DataFormView DataObject="{Binding NewPlant}" CommitMode="PropertyChanged"/>
+            <Button Command="{Binding AddPlantCommand}" Text="Save"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

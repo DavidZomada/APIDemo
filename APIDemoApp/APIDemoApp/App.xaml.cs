@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using APIDemoApp.Views;
+using APIDemoApp.Views.Componets;
 
 namespace APIDemoApp
 {
@@ -9,9 +10,10 @@ namespace APIDemoApp
     {
         public App()
         {
+            DevExpress.XamarinForms.DataForm.Initializer.Init();
             InitializeComponent();
-
-            MainPage = new MainPage();
+            //MainPage = new MainPageView();
+            MainPage = new ArenaPageView();
         }
 
         protected override void OnStart()
